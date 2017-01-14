@@ -1,0 +1,11 @@
+If one cell is greater than another
+=IF(B3>C3, "It\'s Larger", "It\'s Smaller")
+ 
+Simple IF would add cells A1 through A10 and if the result is 10, it would write out the sentence, otherwise it would output the sum.
+=IF(SUM(A1:A10)=10,"The result is ten.",SUM(A1:A10))
+ 
+If either E22 or F22 is blank (empty), then output the sentence, otherwise multiply the two cells and output the product.
+=IF(OR(ISBLANK(E22),ISBLANK(F22)),"One of the cells is empty.",SUM(E22*F22))
+ 
+If both E22 and F22 is blank (empty), then output the sentence, otherwise multiply the two cells and output the product.
+=IF(AND(ISBLANK(E22),ISBLANK(F22)),"Both of the cells are empty.",SUM(E22*F22))
