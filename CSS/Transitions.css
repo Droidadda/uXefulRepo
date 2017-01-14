@@ -1,0 +1,9 @@
+.element {
+    -webkit-transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -moz-transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -ms-transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -o-transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+ 
+.element {-webkit-transition: all 0.25s; -moz-transition: all 0.25s; -o-transition: all 0.25s; transition: all 0.25s;}
