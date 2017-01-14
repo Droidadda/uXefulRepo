@@ -1,0 +1,6 @@
+Redirect 301 /wp-content/index.php /
+ 
+# Redirect a directory but not subdirectories. In this example we redirect /assisted-living/tour to the parent directory with a campaign URL. The regex $ prevents a redirect loop (and 500 error).
+# https://regex101.com/r/fOoTgC/1
+# The first /? may not be necessary...
+RedirectMatch 301 ^/?assisted-living/tour/?$ /assisted-living/?utm_source=YouTube&utm_medium=Video&utm_campaign=2016Q4%20Housing
