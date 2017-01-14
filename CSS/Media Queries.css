@@ -1,0 +1,39 @@
+@media only screen and (max-width: 767px){
+  /* Styles here */
+}
+ 
+ 
+ 
+@media (script){
+  /* Styles here */
+}
+ 
+ 
+@media (luminosity: dim) {
+  /* Styles here */
+}
+ 
+@media (luminosity: washed) {
+  /* Styles here */
+}
+ 
+@media (luminosity: normal) {
+  /* Styles here */
+}
+ 
+@media (pointer: coarse) {
+  /* Styles here */
+}
+ 
+@media (pointer: fine) {
+  /* Styles here */
+}
+ 
+@media (hover) { /* ...or is it (hover: 1) */
+  /* Styles here */
+}
+ 
+ 
+@supports (box-shadow: 2px 2px 2px black) or (-moz-box-shadow: 2px 2px 2px black) or (-webkit-box-shadow: 2px 2px 2px black) or (-o-box-shadow: 2px 2px 2px black){
+  /* Styles here */
+}
