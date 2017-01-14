@@ -1,0 +1,5 @@
+SetEnvIfNoCase User-Agent "^libwww-perl*" block_bad_bots
+Deny from env=block_bad_bots
+ 
+deny from 24.49.97.94
+deny from 24.58.152.89
