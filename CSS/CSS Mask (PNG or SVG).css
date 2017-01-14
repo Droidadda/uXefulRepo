@@ -1,0 +1,4 @@
+#photobar {
+    width: 100%; height: 243px; background: url("/images/photobar.jpg"); background-size: cover;
+    -webkit-mask-image: url("/images/curvemask.png"); -webkit-mask-size: cover;
+}
