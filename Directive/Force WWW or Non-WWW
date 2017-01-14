@@ -1,0 +1,15 @@
+###################
+#@TODO: Pick one of the following: Force no-www -or- Force www
+ 
+#Force no-www
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} !^yourdomain.com$ [NC] #Domain only (no subdirectories)
+#RewriteRule ^(.*)$ http://yourdomain.com/$1 [L,R=301] #Domain with subdirectories (if applicable)
+ 
+#Force www
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} !^www.yourdomain.com$ [NC] #Domain only (no subdirectories)
+#RewriteRule ^(.*)$ http://www.yourdomain.com/$1 [L,R=301] #Domain with subdirectories (if applicable)
+###################
