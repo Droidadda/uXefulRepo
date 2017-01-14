@@ -1,0 +1,20 @@
+#Cache filess for certain lengths of time (Google PageSpeed like 1 week, 604800)
+#1 YEAR
+<FilesMatch "\.(ico|pdf|flv|png|gif|swf|jpg|jpeg|svg|woff|mp3|css|php|html|js)$">
+    Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+ 
+#1 WEEK
+#<FilesMatch "\.(png|gif|swf|jpg|jpeg|svg|woff|mp3|css|php|html|js)$">
+#   Header set Cache-Control "max-age=604800, public"
+#</FilesMatch>
+ 
+#2 DAYS
+<FilesMatch "\.(xml|txt)$">
+    Header set Cache-Control "max-age=172800, proxy-revalidate"
+</FilesMatch>
+ 
+#Disable Cache for filetypes
+<FilesMatch ".(pl|cgi|spl|scgi|fcgi)$">
+    Header unset Cache-Control
+</FilesMatch>
