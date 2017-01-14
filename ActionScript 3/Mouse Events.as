@@ -1,5 +1,5 @@
 /*==========================
- Mouse Events
+ Mouse Hover and Click Events
  ===========================*/
  
 clickTag.addEventListener(MouseEvent.MOUSE_UP, onClick);
