@@ -1,0 +1,22 @@
+//Redirect if only single search result
+add_action('template_redirect', 'redirect_single_post');
+function redirect_single_post(){
+    if ( is_search() ){
+        global $wp_query;
+        if ( $wp_query->post_count == 1 && $wp_query->max_num_pages == 1 ){
+            if ( isset($_GET['s']) ){
+                //If the redirected post is the homepage, serve the regular search results page with one result (to prevent a redirect loop)
+                if ( $wp_query->posts['0']->ID != 1 && get_permalink($wp_query->posts['0']->ID) != home_url() . '/' ){
+                    ga_send_event('Internal Search', 'Single Result Redirect', $_GET['s']);
+                    $_GET['s'] = str_replace(' ', '+', $_GET['s']);
+                    wp_redirect(get_permalink($wp_query->posts['0']->ID ) . '?rs=' . $_GET['s']);
+                    exit;
+                }
+            } else {
+                ga_send_event('Internal Search', 'Single Result Redirect');
+                wp_redirect(get_permalink($wp_query->posts['0']->ID) . '?rs');
+                exit;
+            }
+        }
+    }
+}
