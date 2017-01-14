@@ -1,0 +1,11 @@
+ssh root@example.com
+#Are you sure you want to continue?
+yes
+#Enter password
+pwd #this shows what directory you are currently in
+cd /home/usernamehere/public_html/ #and so on until you get to where you want
+ls -lah #this shows (with detail) all the files in this directory
+#if you see the user "root" for a directory, change it to the appropriate user, in this case, the directory "PoC" need to be owned by phgtests
+chown -R phgtests.phgtests PoC/ #-R makes this change recursive to children
+ls -lah #to make sure the change was made
+exit #to close connection
