@@ -1,0 +1,34 @@
+{
+    "name": "My Web Customizations",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "All of my website customizations",
+    "homepage_url": "https://gearside.com",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "default_locale": "en",
+    "permissions": [
+        "contentSettings",
+        "contextMenus",
+        "cookies",
+        "history",
+        "notifications",
+        "storage",
+        "tabs",
+        "geolocation",
+        "<all_urls>"
+    ],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "css": ["css/inject.css"]
+    }, {
+        "matches": ["<all_urls>"], //["*://*.gearside.com/*"]
+        "js": [
+            "js/jquery.min.js",
+            "js/inject.js"
+        ]
+    }]
+}
