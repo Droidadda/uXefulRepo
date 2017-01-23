@@ -106,7 +106,8 @@ function autocompleteSearch(){
 //END JAVASCRIPT
  
  
- 
+<?php
+
 //Easily create markup for a Hero area search input
 function nebula_hero_search($placeholder='What are you looking for?'){
     $override = apply_filters('pre_nebula_hero_search', false, $placeholder);
