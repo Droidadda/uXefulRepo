@@ -1,6 +1,4 @@
 <?php
-
-<?php
 	
 //Fixed Prices Metabox and Custom Field
 add_action('load-post.php', 'example_post_meta_boxes_setup');
