@@ -1,6 +1,6 @@
 <?php
 
-//Location Hours Metabox and Custom Fields
+//Example Custom Fields Metabox and Custom Fields
 add_action('load-post.php', 'example_post_meta_boxes_setup');
 add_action('load-post-new.php', 'example_post_meta_boxes_setup');
 function example_add_post_meta_boxes(){
