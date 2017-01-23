@@ -1,3 +1,5 @@
+<?php
+
 //Location Hours Metabox and Custom Fields
 add_action('load-post.php', 'schc_post_meta_boxes_setup');
 add_action('load-post-new.php', 'schc_post_meta_boxes_setup');
