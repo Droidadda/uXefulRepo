@@ -1,3 +1,5 @@
+<?php
+
 //Recursive Glob
 function glob_r($pattern, $flags = 0){
     $override = apply_filters('pre_glob_r', false, $pattern, $flags);
