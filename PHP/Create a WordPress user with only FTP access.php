@@ -1,3 +1,5 @@
+<?php
+
 add_action('init', 'wpb_admin_account');
 function wpb_admin_account(){
     $user = 'Username';
