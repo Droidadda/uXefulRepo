@@ -1,3 +1,5 @@
+<?php
+
 //Generate a random integer between two numbers with an exclusion array
 //Call it like: random_number_between_but_not(1, 10, array(5, 6, 7, 8));
 function random_number_between_but_not($min=null, $max=null, $butNot=null){
