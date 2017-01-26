@@ -1,3 +1,5 @@
+<input id="testcert" type="file" name="testcert" />
+
 <script>
 	jQuery(document).on('change', '#testcert', function(e){ //This triggers on change of the file input field, but can be changed.
 	    var fd = new FormData(); //Uses the Form API
