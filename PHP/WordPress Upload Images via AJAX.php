@@ -5,6 +5,8 @@
 	    var fd = new FormData(); //Uses the Form API
 	    fd.append('file', jQuery(this)[0].files[0]);
 	    fd.append('action', 'tax_cert_upload'); //The PHP AJAX function to call
+	    fd.append('nonce', nebula.site.ajax.nonce);
+	    fd.append('custom_filename', 'optional_custom_filename_here'); //Could be pulled from an input val...
 
 	    jQuery.ajax({
 	        type: 'POST',
@@ -32,14 +34,27 @@
 add_action('wp_ajax_tax_cert_upload', 'tax_cert_upload');
 add_action('wp_ajax_nopriv_tax_cert_upload', 'tax_cert_upload');
 function tax_cert_upload(){
-	echo "Inside PHP function. Raw files:\n";
-  print_r($_FILES);
+	if ( !wp_verify_nonce($_POST['nonce'], 'nebula_ajax_nonce') ){ die('Permission Denied.'); }
 
-	require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-	require_once(ABSPATH . "wp-admin" . '/includes/file.php'); //might only need this one.
-	require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+	//Rename the file
+	if ( !empty($_POST['custom_filename']) ){ //Either pass it here or hard-code it.
+		$file_name_parts = explode(".", $_FILES["file"]["name"]);
+		$_FILES["file"]["name"] = sanitize_text_field($_POST['custom_filename']) . '.' . end($file_name_parts);
+	}
 
-	$upload_tax_cert = wp_handle_upload($_FILES['file'], array('test_form' => FALSE)); //This array is required or else it does not work.
+	require_once(ABSPATH . 'wp-admin/includes/file.php'); //might only need this one.
+
+	$upload_tax_cert = wp_handle_upload($_FILES['file'], array(
+		'action' => $_POST['action'],
+		'test_form' => false, //Required or else it fails
+		'mimes' => array(
+			'jpg|jpeg|jpe' => 'image/jpeg',
+			'png' => 'image/png',
+			'pdf' => 'application/pdf',
+			'doc' => 'application/msword',
+		),
+	));
+
 	if ( $upload_tax_cert && !isset($upload_tax_cert['error']) ){
 		echo "File is valid, and was successfully uploaded.\n";
 		print_r($upload_tax_cert);
