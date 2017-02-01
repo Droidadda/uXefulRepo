@@ -1,0 +1,9 @@
+#Make sure Finder is showing hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
+Navigate to Macintosh HD > Users > yourname > Library > Application Support > Coda 2
+
+Backup: Save the folder "Sites" to a backup location
+Restore: Copy the folder "Sites" from backup to this directory
+
+Passwords are saved in Keychain, so this does not backup/recover passwords.
