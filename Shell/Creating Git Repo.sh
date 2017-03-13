@@ -2,8 +2,7 @@
 #Create a folder that will contain the repo (I generally like to do [GitHub]/Repo-Name/
 cd ~/Desktop/Whatever/GitHub/Nebula
 git init
-git remote add origin https://github.com/chrisblakley/Nebula.git
-git pull origin master
+git pull https://github.com/chrisblakley/Nebula.git
  
  
 #Modify a file (in Coda or wherever), then replace a file in the local git folder. Then upload it with:
