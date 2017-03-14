@@ -6,7 +6,7 @@
 
 <!-- Using Nebula w/ Device Detection: -->
 <div id="videocon">
-  <?php if ( nebula_is_browser('ie', '8', '<=') || nebula_is_browser('safari', '8', '<=') || nebula_get_device('formfactor') == 'mobile' ): ?>
+  <?php if ( nebula()->is_browser('ie', '8', '<=') || nebula()->is_browser('safari', '8', '<=') || nebula()->get_device('formfactor') == 'mobile' ): ?>
     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/poster.png" />
   <?php else: ?>
     <video id="video" autobuffer autoplay muted loop>
