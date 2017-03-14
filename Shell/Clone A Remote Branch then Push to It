@@ -1,0 +1,13 @@
+cd ~/Documents/Github/Ruben/ #Change to a folder to pull into (make sure it exists first)
+git init
+git clone https://github.com/rubengc/Nebula.git
+cd ~/Documents/Github/Ruben/Nebula/ #May need to change to the directory that it makes.
+git branch -a #List all of the branches
+git checkout -b visitors-improvements origin/visitors-improvements #Change to the "visitors-improvements" branch
+
+
+#Push to that branch:
+git add -A
+git status #View changed files
+git commit -m "Enter your message here"
+git push origin HEAD:visitors-improvements #Do this instead of push origin master
