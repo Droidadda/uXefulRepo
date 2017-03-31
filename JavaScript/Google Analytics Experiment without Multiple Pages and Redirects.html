@@ -1,0 +1,51 @@
+Reference: https://developers.google.com/analytics/solutions/experiments-client-side
+That documentation is close, but does have some errors.
+
+
+Place this at the very top of the page:
+<!-- ***Note: This snippet is provided by Google Analytics, so it is different for every experiment (I think)! -->
+<!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='142945528-6',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script>
+<!-- End of Google Analytics Content Experiment code -->
+<!-- ***Note: The second script tag (which redirects) has been removed! -->
+
+<script src="//www.google-analytics.com/cx/api.js?experiment=j1l1Wt3hRUOTspp_M3m2NA"></script><!-- Update experiment ID with actual -->
+
+<script>
+  var chosenVariation = cxApi.chooseVariation(); //Ask Google Analytics which variation to show the user.
+  console.log('ga has chosen variation:');
+  console.debug(chosenVariation); //Test in incognito windows until this shows a variant! Will default to 0.
+</script>
+
+<script>
+  //Define JavaScript for each page variation of this experiment.
+	var pageVariations = [
+	  function(){
+		  console.log('ORIGINAL VERSION (full)');
+		}, //Original: Cards, Videos, Counter
+		function(){ //Variation 1: Only Form
+		  console.log('VARIATION 1 (short)');
+			jQuery('#content-section').addClass('hidden');
+			jQuery('#children-section').addClass('hidden');
+			jQuery('#footer-section').addClass('shim');
+		}
+	];
+</script>
+
+
+This is in main.js (so can be triggered when jQuery is ready):
+//Check and execute Google Analytics experiment
+if ( typeof pageVariations !== 'undefined' ){
+  pageVariations[chosenVariation](); //Execute the chosen view
+}
