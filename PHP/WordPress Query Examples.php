@@ -31,7 +31,7 @@
         </div>
 
         <div class="entry-content">
-            <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
+            <?php echo nebula()->excerpt(array('more' => 'Read More &raquo;', 'length' => 35, 'ellipsis' => true)); ?>
         </div>
     </article>
 <?php endwhile; ?>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="entry-content">
-            <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
+            <?php echo nebula()->excerpt(array('more' => 'Read More &raquo;', 'length' => 35, 'ellipsis' => true)); ?>
         </div>
     </article>
 <?php endwhile; ?>
@@ -77,7 +77,7 @@
 ?>
     <div class="home-feed-item event-feed-item">
         <h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-        <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
+        <?php echo nebula()->excerpt(array('more' => 'Read More &raquo;', 'length' => 35, 'ellipsis' => true)); ?>
     </div>
 <?php endwhile; ?>
 
@@ -116,7 +116,7 @@
 			        </div>
 
 			        <div class="entry-content">
-			            <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
+			            <?php echo nebula()->excerpt(array('more' => 'Read More &raquo;', 'length' => 35, 'ellipsis' => true)); ?>
 			        </div>
 			    </article>
 			</div><!--/col-->
