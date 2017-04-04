@@ -27,11 +27,11 @@
         <h2 class="news-title entry-title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 
         <div class="entry-meta">
-        	<?php nebula_meta('on', 0); ?> <?php nebula_meta('cat'); ?> <?php nebula_meta('by'); ?> <?php nebula_meta('tags'); ?>
+        	<?php nebula()->meta('on', 0); ?> <?php nebula()->meta('cat'); ?> <?php nebula()->meta('by'); ?> <?php nebula()->meta('tags'); ?>
         </div>
 
         <div class="entry-content">
-            <?php echo nebula_the_excerpt('Read More &raquo;', 35, 1); ?>
+            <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
         </div>
     </article>
 <?php endwhile; ?>
@@ -48,11 +48,11 @@
         <h2 class="news-title entry-title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 
         <div class="entry-meta">
-        	<?php nebula_meta('on', 0); ?> <?php nebula_meta('cat'); ?> <?php nebula_meta('by'); ?> <?php nebula_meta('tags'); ?>
+        	<?php nebula()->meta('on', 0); ?> <?php nebula()->meta('cat'); ?> <?php nebula()->meta('by'); ?> <?php nebula()->meta('tags'); ?>
         </div>
 
         <div class="entry-content">
-            <?php echo nebula_the_excerpt('Read More &raquo;', 35, 1); ?>
+            <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
         </div>
     </article>
 <?php endwhile; ?>
@@ -77,7 +77,7 @@
 ?>
     <div class="home-feed-item event-feed-item">
         <h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-        <?php echo nebula_the_excerpt('Read More &raquo;', 35, 1); ?>
+        <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
     </div>
 <?php endwhile; ?>
 
@@ -112,11 +112,11 @@
 			        <h2 class="news-title entry-title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 
 			        <div class="entry-meta">
-			        	<?php nebula_meta('on', 0); ?> <?php nebula_meta('cat'); ?> <?php nebula_meta('by'); ?> <?php nebula_meta('tags'); ?>
+			        	<?php nebula()->meta('on', 0); ?> <?php nebula()->meta('cat'); ?> <?php nebula()->meta('by'); ?> <?php nebula()->meta('tags'); ?>
 			        </div>
 
 			        <div class="entry-content">
-			            <?php echo nebula_the_excerpt('Read More &raquo;', 35, 1); ?>
+			            <?php echo nebula()->excerpt('Read More &raquo;', 35, 1); ?>
 			        </div>
 			    </article>
 			</div><!--/col-->
@@ -147,7 +147,7 @@
 
 <?php
 	//Example using Nebula Infinite Load (see also infinite_load.php)
-	//nebula_infinite_load_query($args);
+	//nebula()->infinite_load_query($args);
 ?>
 
 <?php
