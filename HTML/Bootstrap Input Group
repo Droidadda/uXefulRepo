@@ -1,0 +1,5 @@
+<div class="form-group">
+	<label class="form-control-label" for="example_email">Email Address*</label>
+	<input id="example_email" class="form-control" type="email" placeholder="Email address">
+	<div class="form-control-feedback hidden">Please check that you have entered a valid email address.</div>
+</div>
