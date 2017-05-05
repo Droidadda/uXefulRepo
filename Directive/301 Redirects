@@ -4,3 +4,7 @@ Redirect 301 /wp-content/index.php /
 # https://regex101.com/r/fOoTgC/1
 # The first /? may not be necessary...
 RedirectMatch 301 ^/?assisted-living/tour/?$ /assisted-living/?utm_source=YouTube&utm_medium=Video&utm_campaign=2016Q4%20Housing
+
+# Another example of redirecting a directory but not it's children
+RedirectMatch 301 ^/practice_area$ /practice-areas
+RedirectMatch 301 ^/practice_area/$ /practice-areas
