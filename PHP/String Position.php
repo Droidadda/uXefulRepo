@@ -1,3 +1,5 @@
+<?php
+
 //Syntax:
 substr($haystack, $start, $end);
  
