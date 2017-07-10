@@ -1,0 +1,25 @@
+	//Mega Menu
+	var megaMenuHoverTimeout; //Prep timer
+	jQuery('ul#primary-nav a.toplevel').hover(function(){ //For top-level hovers
+		//Hide non-active menus
+    if ( !jQuery(this).parents('li.active').length ){
+			jQuery('ul#primary-nav li.active').removeClass('active');
+			jQuery('.navdropdown').hide();
+		}
+	}, function(){
+		//Do nothing on hover-out
+	});
+	jQuery('ul#primary-nav a.toplevel, .navdropdown').hover(function(){ //For both top-levels and nav menus
+		window.clearTimeout(megaMenuHoverTimeout); //Clear timer
+		megaMenuHoverTimeout = null; //Reset timer
+		jQuery(this).closest('li').addClass('active').find('.navdropdown').slideDown(250, 'swing'); //Show menu and add active to top-level
+	}, function(){
+		oThis = jQuery(this);
+
+		if ( !megaMenuHoverTimeout ){
+			megaMenuHoverTimeout = window.setTimeout(function(){ //Delay before closing menu
+				megaMenuHoverTimeout = null; //Reset timer
+				oThis.closest('li').removeClass('active').find('.navdropdown').slideUp(250, 'swing'); //Close menu
+			}, 250);
+		}
+	});
