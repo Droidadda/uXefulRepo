@@ -6,5 +6,5 @@ Redirect 301 /wp-content/index.php /
 RedirectMatch 301 ^/?assisted-living/tour/?$ /assisted-living/?utm_source=YouTube&utm_medium=Video&utm_campaign=2016Q4%20Housing
 
 # Another example of redirecting a directory but not it's children
-RedirectMatch 301 ^/practice_area$ /practice-areas
-RedirectMatch 301 ^/practice_area/$ /practice-areas
+# Notice the /?$ part of this. The /? allows for capturing with and without the trailing slash. The $ is what prevents subdirectories from following the redirect too
+RedirectMatch 301 ^/practice_area/?$ /practice-areas
