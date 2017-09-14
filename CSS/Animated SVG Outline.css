@@ -16,7 +16,7 @@
  
  
 /* You can use JavaScript to get the length of the dash, so it can be dynamic */
-var length = jQuery('#logo')[0].getTotalLength();
+var length = jQuery('svg #logo').get(0).getTotalLength(); //Remember #logo is a path element NOT THE SVG ITSELF!
  
  
  
