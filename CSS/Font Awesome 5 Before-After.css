@@ -1,0 +1,8 @@
+<script>
+  window.FontAwesomeConfig = {
+    searchPseudoElements: true
+  }
+</script>
+
+
+.element:before {content: "\f16c"; font-family: "Font Awesome 5 Free"; display: none;} /* Free, Solid, Light, Regular, Brand */
